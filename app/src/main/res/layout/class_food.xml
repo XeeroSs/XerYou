@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/backgroung_black">
+
+    <LinearLayout
+        android:layout_width="375dp"
+        android:layout_height="2dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="163dp"
+        android:background="@color/line"
+        android:gravity="center_horizontal">
+
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/imagess"
+        android:layout_width="137dp"
+        android:layout_height="134dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="15dp"
+        android:src="@drawable/bouffe" />
+
+    <TextView
+        android:id="@+id/image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignStart="@+id/button"
+        android:layout_marginTop="40dp"
+        android:text="Anime/Manga"
+        android:textColor="@color/cardview_light_background"
+        android:textSize="28dp" />
+
+    <TextView
+        android:id="@+id/text2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/image"
+        android:layout_alignStart="@+id/image"
+        android:layout_marginBottom="-40dp"
+        android:text="Classement"
+        android:textColor="@color/album_title"
+        android:textSize="15dp" />
+
+    <LinearLayout
+        android:layout_width="375dp"
+        android:layout_height="2dp"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/textView"
+        android:background="@color/line"
+        android:gravity="center_horizontal">
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="26dp"
+        android:layout_alignBottom="@+id/imagess"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="106dp"
+        android:background="@drawable/buttoncorner"
+        android:text="Retour"
+        android:textColor="@color/cardview_light_background"
+        android:textSize="12dp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="-7dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignStart="@+id/imagess"
+        android:layout_marginTop="205dp"
+        android:text="#"
+        android:textColor="@color/album_title" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignTop="@+id/textView"
+        android:layout_marginStart="89dp"
+        android:text="TITRE"
+        android:textColor="@color/album_title" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignTop="@+id/textView"
+        android:layout_marginStart="270dp"
+        android:text="STATUT"
+        android:textColor="@color/album_title" />
+
+    <ListView
+        android:id="@android:id/list"
+        android:layout_marginTop="225dp"
+        android:layout_width="match_parent"
+        android:layout_height="341dp">
+
+    </ListView>
+
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recycler"
+        android:layout_marginTop="225dp"
+        android:layout_width="match_parent"
+        android:layout_height="341dp"/>
+
+    <LinearLayout
+        android:layout_width="375dp"
+        android:layout_marginTop="565dp"
+        android:layout_height="2dp"
+        android:layout_alignParentStart="true"
+        android:background="@color/line"
+        android:gravity="center_horizontal">
+
+    </LinearLayout>
+
+</RelativeLayout>

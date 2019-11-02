@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#F50057</color>
+    <color name="colorPrimaryDark">#F50057</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="viewBg">#f1f5f8</color>
+    <color name="album_title">#4c4c4c</color>
+    <color name="backgroung_black">#181818</color>
+    <color name="line">#1F1F1F</color>
+    <color name="blanc_gris">#c4c4c4</color>
+
+    <color name="gold">#FFD700</color>
+    <color name="silver">#887f77</color>
+    <color name="copper">#cd7f32</color>
+</resources>
