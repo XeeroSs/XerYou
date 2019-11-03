@@ -5,7 +5,7 @@
     <string name="backdrop_title">Creation de XeroSs</string>
     <string name="backdrop_subtitle">Application mobile</string>
     <string name="title_activity_settings">Settings</string>
-    <string name="category_count">%d items.</string>
+    <string name="category_count">%d items</string>
 
 
     <string name="title_categories">Music,Series,Movie,Anime/Manga,video Game,Food</string>

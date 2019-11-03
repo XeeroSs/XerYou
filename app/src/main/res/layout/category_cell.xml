@@ -34,7 +34,7 @@
                 android:layout_below="@id/categoryCell_ImageButton_CategoryImage"
                 android:paddingLeft="10dp"
                 android:paddingRight="10dp"
-                android:paddingTop="10dp"
+                android:paddingTop="3dp"
                 android:textColor="@color/album_title"
                 android:textSize="15dp" />
 
@@ -54,7 +54,7 @@
                 android:layout_height="30dp"
                 android:layout_alignParentRight="true"
                 android:layout_below="@id/categoryCell_ImageButton_CategoryImage"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="3dp"
                 android:scaleType="centerCrop"
                 android:src="@drawable/menu" />
 
