@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_gravity="bottom"
-    android:id="@+id/background"
+    android:id="@+id/activityMain_background"
     android:background="@color/viewBg"
     tools:showIn="@layout/activity_main">
 
@@ -17,7 +17,7 @@
     </LinearLayout>
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recycler_view"
+        android:id="@+id/activityMain_RecyclerView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
@@ -30,20 +30,20 @@
         android:layout_width="375dp"
         android:layout_height="2dp"
         android:layout_alignParentStart="true"
-        android:layout_alignTop="@+id/recycler_view"
+        android:layout_alignTop="@+id/activityMain_RecyclerView"
         android:background="@color/line">
 
     </LinearLayout>
 
     <Switch
         android:layout_height="wrap_content"
-        android:id="@+id/switch1"
+        android:id="@+id/activityMain_Switch"
         android:layout_width="143dp"
         android:layout_alignParentEnd="true"
         android:layout_alignParentTop="true"
         android:layout_marginEnd="8dp"
         android:layout_marginTop="8dp"
-        android:text="Mode sombre  "
+        android:text="@string/dark_mode"
         android:textColor="@color/cardview_light_background"
         android:textStyle="bold" />
 

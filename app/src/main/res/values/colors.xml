@@ -12,4 +12,7 @@
     <color name="gold">#FFD700</color>
     <color name="silver">#887f77</color>
     <color name="copper">#cd7f32</color>
+
+    <color name="silver2">#909090</color>
+    <color name="copper2">#ce895b</color>
 </resources>

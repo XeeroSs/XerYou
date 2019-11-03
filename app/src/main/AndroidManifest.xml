@@ -9,19 +9,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Controller.MainActivity">
+        <activity android:name=".controller.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Controller.ClassActivity.ClassMusic" />
-        <activity android:name=".Controller.ClassActivity.ClassSerie" />
-        <activity android:name=".Controller.ClassActivity.ClassFilm" />
-        <activity android:name=".Controller.ClassActivity.ClassAnime" />
-        <activity android:name=".Controller.ClassActivity.ClassGames" />
-        <activity android:name=".Controller.ClassActivity.ClassFood" />
+        <activity android:name=".controller.CategoryActivity" />
 
         <meta-data
             android:name="preloaded_fonts"

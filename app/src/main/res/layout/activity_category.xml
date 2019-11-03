@@ -16,111 +16,113 @@
     </LinearLayout>
 
     <ImageView
-        android:id="@+id/imagess"
+        android:id="@+id/activityCategory_ImageItem"
         android:layout_width="137dp"
         android:layout_height="134dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_marginStart="15dp"
-        android:layout_marginTop="15dp"
-        android:src="@drawable/jeu" />
+        android:layout_marginTop="15dp" />
 
     <TextView
-        android:id="@+id/image"
+        android:id="@+id/activityCategory_TitleItem"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/activityCategory_ButtonBack"
         android:layout_alignParentTop="true"
-        android:layout_alignStart="@+id/button"
         android:layout_marginTop="40dp"
-        android:text="Anime/Manga"
         android:textColor="@color/cardview_light_background"
-        android:textSize="28dp" />
+        android:textSize="28sp" />
 
     <TextView
-        android:id="@+id/text2"
+        android:id="@+id/activityCategory_RankTextItem"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/image"
-        android:layout_alignStart="@+id/image"
+        android:layout_above="@+id/activityCategory_TitleItem"
+        android:layout_alignStart="@+id/activityCategory_TitleItem"
         android:layout_marginBottom="-40dp"
-        android:text="Classement"
+        android:text="@string/category_text"
         android:textColor="@color/album_title"
-        android:textSize="15dp" />
+        android:textSize="15sp" />
 
     <LinearLayout
         android:layout_width="375dp"
         android:layout_height="2dp"
+        android:layout_below="@+id/activityCategory_numberRankItem"
         android:layout_alignParentStart="true"
-        android:layout_below="@+id/textView"
         android:background="@color/line"
         android:gravity="center_horizontal">
 
     </LinearLayout>
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/activityCategory_ButtonBack"
         android:layout_width="wrap_content"
         android:layout_height="26dp"
-        android:layout_alignBottom="@+id/imagess"
+        android:layout_alignBottom="@+id/activityCategory_ImageItem"
         android:layout_alignParentEnd="true"
         android:layout_marginEnd="106dp"
         android:background="@drawable/buttoncorner"
-        android:text="Retour"
+        android:text="@string/back"
         android:textColor="@color/cardview_light_background"
-        android:textSize="12dp"
+        android:textSize="12sp"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/activityCategory_ButtonAddItem"
+        android:layout_width="26dp"
+        android:layout_height="26dp"
+        android:layout_alignBottom="@+id/activityCategory_ImageItem"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="76dp"
+        android:background="@drawable/buttoncornerblue"
+        android:textColor="@null"
+        android:textSize="12sp"
         android:textStyle="bold" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/activityCategory_numberRankItem"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="-7dp"
+        android:layout_alignStart="@+id/activityCategory_ImageItem"
         android:layout_alignParentTop="true"
-        android:layout_alignStart="@+id/imagess"
+        android:layout_marginStart="-7dp"
         android:layout_marginTop="205dp"
-        android:text="#"
+        android:text="@string/number_rank_item_list"
         android:textColor="@color/album_title" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/activityCategory_TitleRankItem"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/activityCategory_numberRankItem"
         android:layout_alignParentStart="true"
-        android:layout_alignTop="@+id/textView"
         android:layout_marginStart="89dp"
-        android:text="TITRE"
+        android:text="@string/title_rank_item_list"
         android:textColor="@color/album_title" />
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/activityCategory_StateRankItem"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/activityCategory_numberRankItem"
         android:layout_alignParentStart="true"
-        android:layout_alignTop="@+id/textView"
         android:layout_marginStart="270dp"
-        android:text="STATUT"
+        android:text="@string/state_rank_item_list"
         android:textColor="@color/album_title" />
-
-    <ListView
-        android:id="@android:id/list"
-        android:layout_marginTop="225dp"
-        android:layout_width="match_parent"
-        android:layout_height="341dp">
-
-    </ListView>
 
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recycler"
-        android:layout_marginTop="225dp"
+        android:id="@+id/activityCategory_RecyclerViewItem"
         android:layout_width="match_parent"
-        android:layout_height="341dp"/>
+        android:layout_height="341dp"
+        android:layout_marginTop="225dp" />
 
     <LinearLayout
         android:layout_width="375dp"
-        android:layout_marginTop="565dp"
         android:layout_height="2dp"
         android:layout_alignParentStart="true"
+        android:layout_marginTop="565dp"
         android:background="@color/line"
         android:gravity="center_horizontal">
 

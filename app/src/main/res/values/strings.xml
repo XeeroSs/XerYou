@@ -1,11 +1,14 @@
 <resources>
-    <string name="app_name">XerPerso</string>
+    <string name="app_name">XerYou</string>
     <string name="action_settings">Options</string>
-    <string name="action_add_favourite">Changer le nom</string>
-    <string name="action_play_next">Options</string>
+    <string name="action_nothing">Soon…</string>
     <string name="backdrop_title">Creation de XeroSs</string>
     <string name="backdrop_subtitle">Application mobile</string>
     <string name="title_activity_settings">Settings</string>
+    <string name="category_count">%d items.</string>
+
+
+    <string name="title_categories">Music,Series,Movie,Anime/Manga,video Game,Food</string>
 
     <!-- Strings related to Settings -->
 
@@ -78,4 +81,11 @@
     <string name="pref_ringtone_silent">Silent</string>
 
     <string name="pref_title_vibrate">Vibrate</string>
+    <string name="not_available">Not available</string>
+    <string name="dark_mode">Dark mode </string>
+    <string name="back">Back</string>
+    <string name="number_rank_item_list">#</string>
+    <string name="title_rank_item_list">TITLE</string>
+    <string name="state_rank_item_list">STATE</string>
+    <string name="category_text">Category</string>
 </resources>

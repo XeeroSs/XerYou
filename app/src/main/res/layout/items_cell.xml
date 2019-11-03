@@ -20,7 +20,7 @@
         android:background="@null">
 
         <TextView
-            android:id="@+id/classement"
+            android:id="@+id/itemsCell_NumberItems"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="8dp"
@@ -35,7 +35,7 @@
             android:textStyle="bold" />
 
         <ImageView
-            android:id="@+id/image"
+            android:id="@+id/itemsCell_ImageItems"
             android:layout_width="60dp"
             android:layout_height="57dp"
             android:layout_marginBottom="8dp"
@@ -45,7 +45,7 @@
             app:srcCompat="@drawable/jeu" />
 
         <TextView
-            android:id="@+id/titles"
+            android:id="@+id/itemsCell_TitleItems"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
@@ -58,7 +58,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/statut"
+            android:id="@+id/itemsCell_StateItems"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
