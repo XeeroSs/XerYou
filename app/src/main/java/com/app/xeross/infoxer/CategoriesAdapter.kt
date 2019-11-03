@@ -20,6 +20,10 @@ class CategoriesAdapter(val context: Context,
     override fun getItemCount() = categoriesList.size
 
     override fun onBindViewHolder(holder: CategoriesViewHolder, position: Int) {
+        updateCategories(position, holder)
+    }
+
+    private fun updateCategories(position: Int, holder: CategoriesViewHolder) {
         Glide.with(context).load(categoriesList[position].categoryImage).into(holder.imageButtonCategoryImage)
         holder.textViewCategoryTitle.text = categoriesList[position].categoryTitle
         holder.textViewCategoryCount.text = context.getString(R.string.category_count, categoriesList[position].categoryCount)

@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "690023559832",
+    "firebase_url": "https://xeryou-2d2b6.firebaseio.com",
+    "project_id": "xeryou-2d2b6",
+    "storage_bucket": "xeryou-2d2b6.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:690023559832:android:6efe01f7cd8ffc337716ed",
+        "android_client_info": {
+          "package_name": "com.app.xeross.infoxer"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "690023559832-709st8m6cbpnjoub135o3grv668ssitn.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.app.xeross.infoxer",
+            "certificate_hash": "eaee3b048814c32828710c9486a63b5d25ba078d"
+          }
+        },
+        {
+          "client_id": "690023559832-2068ruipim52avoiiql8l873cc7dgp56.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAVe-n9bdShDrmSPqopfIRX_N18cbhsC-0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "690023559832-2068ruipim52avoiiql8l873cc7dgp56.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

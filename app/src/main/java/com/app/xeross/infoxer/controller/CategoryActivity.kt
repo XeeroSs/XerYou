@@ -40,29 +40,28 @@ class CategoryActivity : AppCompatActivity() {
     private fun testInitializeItems() {
         itemsList = ArrayList()
         val covers = intArrayOf(R.drawable.hunterxhunter, R.drawable.myheroacademia, R.drawable.onepiece, R.drawable.naruto, R.drawable.attackontitan, R.drawable.fairytails, R.drawable.deathnote, R.drawable.onepunchman)
-        val color = intArrayOf(R.color.gold, R.color.silver, R.color.copper, R.color.blanc_gris)
-        var a = ItemModel("1", covers[0], "Hunter x Hunter", "Terminé", color[0])
+        var a = ItemModel("1", covers[0], "Hunter x Hunter", "Terminé")
         itemsList.add(a)
 
-        a = ItemModel("2", covers[1], "(non) My Hero academia", "En attente", color[1])
+        a = ItemModel("2", covers[1], "(non) My Hero academia", "En attente")
         itemsList!!.add(a)
 
-        a = ItemModel("3", covers[2], "One piece", "En attente", color[2])
+        a = ItemModel("3", covers[2], "One piece", "En attente")
         itemsList!!.add(a)
 
-        a = ItemModel("4", covers[3], "Naturo", "En cours", color[3])
+        a = ItemModel("4", covers[3], "Naturo", "En cours")
         itemsList!!.add(a)
 
-        a = ItemModel("5", covers[4], "L’attaque des titans", "En attente", color[3])
+        a = ItemModel("5", covers[4], "L’attaque des titans", "En attente")
         itemsList!!.add(a)
 
-        a = ItemModel("6", covers[5], "Fairy tails", "En cours", color[3])
+        a = ItemModel("6", covers[5], "Fairy tails", "En cours")
         itemsList!!.add(a)
 
-        a = ItemModel("7", covers[6], "Death Note", "En cours", color[3])
+        a = ItemModel("7", covers[6], "Death Note", "En cours")
         itemsList!!.add(a)
 
-        a = ItemModel("8", covers[7], "One punch man", "En cours", color[3])
+        a = ItemModel("8", covers[7], "One punch man", "En cours")
         itemsList!!.add(a)
     }
 }
