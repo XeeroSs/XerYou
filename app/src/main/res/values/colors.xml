@@ -9,6 +9,11 @@
     <color name="line">#1F1F1F</color>
     <color name="blanc_gris">#c4c4c4</color>
 
+
+    <color name="colorRed">#F85C5C</color>
+    <color name="colorOrange">#FFC053</color>
+    <color name="colorWhite">#FFFFFF</color>
+
     <color name="gold">#FFD700</color>
     <color name="silver">#887f77</color>
     <color name="copper">#cd7f32</color>

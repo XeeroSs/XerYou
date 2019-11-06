@@ -7,11 +7,15 @@ import androidx.recyclerview.widget.DefaultItemAnimator
 import androidx.recyclerview.widget.GridLayoutManager
 import android.util.TypedValue
 import android.view.View
+import androidx.lifecycle.ViewModelProviders
 import com.app.xeross.infoxer.CategoriesAdapter
+import com.app.xeross.infoxer.LoginActivity
 
 import com.app.xeross.infoxer.R
 import com.app.xeross.infoxer.model.CategoryModel
 import com.app.xeross.infoxer.utils.*
+import com.app.xeross.infoxer.viewmodel.CategoryViewModel
+import com.google.firebase.auth.FirebaseAuth
 import kotlinx.android.synthetic.main.content_main.*
 
 import java.util.ArrayList
@@ -22,6 +26,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var categoriesList: ArrayList<CategoryModel>
     private lateinit var imagesCategories: IntArray
     private lateinit var categoryTitleList: List<String>
+    private lateinit var categoryViewModel: CategoryViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -30,6 +35,8 @@ class MainActivity : AppCompatActivity() {
         initializeCategories()
         configureUI()
         configureSwitchButton()
+
+        if (FirebaseAuth.getInstance().currentUser == null) startActivity(Intent(this, LoginActivity::class.java))
     }
 
     private fun configureUI() {
@@ -70,5 +77,9 @@ class MainActivity : AppCompatActivity() {
         for (i in 0..categoriesTitleSize) {
             categoriesList.add(CategoryModel(categoryTitleList[i], 0, imagesCategories[i]))
         }
+    }
+
+    private fun configureViewModel() {
+        categoryViewModel = ViewModelProviders.of(this).get(CategoryViewModel::class.java)
     }
 }

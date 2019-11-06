@@ -88,4 +88,6 @@
     <string name="title_rank_item_list">TITLE</string>
     <string name="state_rank_item_list">STATE</string>
     <string name="category_text">Category</string>
+    <string name="login">Login</string>
+    <string name="error_message">An error has occurred, please try again</string>
 </resources>

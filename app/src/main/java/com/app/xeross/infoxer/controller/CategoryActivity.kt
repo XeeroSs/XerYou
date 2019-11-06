@@ -2,6 +2,7 @@ package com.app.xeross.infoxer.controller
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.app.xeross.infoxer.ItemsAdapter
 
@@ -9,6 +10,7 @@ import com.app.xeross.infoxer.R
 import com.app.xeross.infoxer.model.ItemModel
 import com.app.xeross.infoxer.utils.IMAGE_CATEGORY
 import com.app.xeross.infoxer.utils.TITLE_CATEGORY
+import com.app.xeross.infoxer.viewmodel.CategoryViewModel
 import com.bumptech.glide.Glide
 import kotlinx.android.synthetic.main.activity_category.*
 
@@ -18,11 +20,13 @@ class CategoryActivity : AppCompatActivity() {
 
     private lateinit var adapter: ItemsAdapter
     private lateinit var itemsList: ArrayList<ItemModel>
+    private lateinit var categoryViewModel: CategoryViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_category)
 
+        configureViewModel()
         testInitializeItems()
         configureUI()
     }
@@ -64,4 +68,9 @@ class CategoryActivity : AppCompatActivity() {
         a = ItemModel("8", covers[7], "One punch man", "En cours")
         itemsList!!.add(a)
     }
+
+    private fun configureViewModel() {
+        categoryViewModel = ViewModelProviders.of(this).get(CategoryViewModel::class.java)
+    }
+
 }

@@ -41,10 +41,15 @@ dependencies {
     implementation "androidx.core:core-ktx:+"
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 
+    //VIEW MODEL & LIVE DATA
+    implementation 'androidx.lifecycle:lifecycle-extensions:2.0.0'
+    androidTestImplementation 'androidx.arch.core:core-testing:2.0.0'
+
     // FIREBASE
     implementation 'com.android.support:multidex:1.0.3'
     implementation "com.google.firebase:firebase-firestore-ktx:21.2.1"
     implementation "com.google.firebase:firebase-auth:19.1.0"
+    implementation "com.firebaseui:firebase-ui-auth:4.3.1"
 }
 repositories {
     mavenCentral()
