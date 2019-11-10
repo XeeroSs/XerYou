@@ -1,39 +1,101 @@
 package com.app.xeross.infoxer.controller
 
+import android.app.Activity
+import android.content.Intent
+import android.graphics.Bitmap
+import android.net.Uri
 import android.os.Bundle
+import android.provider.MediaStore
+import android.view.LayoutInflater
+import android.view.View
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.app.xeross.infoxer.ItemsAdapter
 
 import com.app.xeross.infoxer.R
+import com.app.xeross.infoxer.ViewModelFactory
 import com.app.xeross.infoxer.model.ItemModel
 import com.app.xeross.infoxer.utils.IMAGE_CATEGORY
+import com.app.xeross.infoxer.utils.PICK_IMAGE_REQUEST
 import com.app.xeross.infoxer.utils.TITLE_CATEGORY
-import com.app.xeross.infoxer.viewmodel.CategoryViewModel
+import com.app.xeross.infoxer.utils.Utils
+import com.app.xeross.infoxer.viewmodel.ItemViewModel
 import com.bumptech.glide.Glide
+import com.google.firebase.auth.FirebaseAuth
 import kotlinx.android.synthetic.main.activity_category.*
-
-import java.util.ArrayList
+import kotlinx.android.synthetic.main.popup_add_item.view.*
+import java.io.IOException
 
 class CategoryActivity : AppCompatActivity() {
 
     private lateinit var adapter: ItemsAdapter
     private lateinit var itemsList: ArrayList<ItemModel>
-    private lateinit var categoryViewModel: CategoryViewModel
+    private lateinit var itemViewModel: ItemViewModel
+    private lateinit var viewDialog: View
+    private lateinit var bitmap: Bitmap
+    private lateinit var itemModel: ItemModel
+    private var filePath: Uri? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_category)
 
         configureViewModel()
-        testInitializeItems()
+        initializeItems()
         configureUI()
+
+        activityCategory_ButtonAddItem.setOnClickListener {
+            viewDialog = LayoutInflater.from(this).inflate(R.layout.popup_add_item, null)
+            val builder = AlertDialog.Builder(this).setView(viewDialog)
+            val alertDialog = builder.show()
+            viewDialog.popupAddItem_ButtonImage.setOnClickListener {
+                launchGallery()
+            }
+            viewDialog.popupAddItem_Cancel.setOnClickListener {
+                alertDialog.dismiss()
+            }
+            viewDialog.popupAddItem_Add.setOnClickListener {
+                itemModel = ItemModel("0",
+                        Utils.encodeBitmap(bitmap),
+                        viewDialog.popupAddItem_Name.text.toString(),
+                        viewDialog.popupAddItem_State.text.toString())
+                itemViewModel.createItemToFirebase(itemModel,
+                        intent.getStringExtra(TITLE_CATEGORY),
+                        FirebaseAuth.getInstance().currentUser!!.uid)
+                alertDialog.dismiss()
+
+            }
+        }
+
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        if (requestCode == PICK_IMAGE_REQUEST && resultCode == Activity.RESULT_OK) {
+            if (data == null || data.data == null) return
+            filePath = data.data
+            try {
+                bitmap = MediaStore.Images.Media.getBitmap(contentResolver, filePath)
+                viewDialog.popupAddItem_ButtonImage.setImageBitmap(bitmap)
+            } catch (e: IOException) {
+                e.printStackTrace()
+            }
+        }
+    }
+
+    private fun launchGallery() {
+        val intent = Intent()
+        intent.type = "image/*"
+        intent.action = Intent.ACTION_GET_CONTENT
+        startActivityForResult(Intent.createChooser(intent, "Select Picture"), PICK_IMAGE_REQUEST)
     }
 
     private fun configureUI() {
         if (intent == null) finish()
-        Glide.with(this).load(intent.getIntExtra(IMAGE_CATEGORY, R.drawable.animeflou)).into(activityCategory_ImageItem)
+        Glide.with(this).load(intent.getIntExtra(IMAGE_CATEGORY, 0)).into(activityCategory_ImageItem)
         activityCategory_TitleItem.text = intent.getStringExtra(TITLE_CATEGORY)
         activityCategory_RecyclerViewItem.layoutManager = LinearLayoutManager(this)
         adapter = ItemsAdapter(this, itemsList)
@@ -41,36 +103,17 @@ class CategoryActivity : AppCompatActivity() {
         activityCategory_ButtonBack.setOnClickListener { finish() }
     }
 
-    private fun testInitializeItems() {
+    private fun initializeItems() {
         itemsList = ArrayList()
-        val covers = intArrayOf(R.drawable.hunterxhunter, R.drawable.myheroacademia, R.drawable.onepiece, R.drawable.naruto, R.drawable.attackontitan, R.drawable.fairytails, R.drawable.deathnote, R.drawable.onepunchman)
-        var a = ItemModel("1", covers[0], "Hunter x Hunter", "Terminé")
-        itemsList.add(a)
-
-        a = ItemModel("2", covers[1], "(non) My Hero academia", "En attente")
-        itemsList!!.add(a)
-
-        a = ItemModel("3", covers[2], "One piece", "En attente")
-        itemsList!!.add(a)
-
-        a = ItemModel("4", covers[3], "Naturo", "En cours")
-        itemsList!!.add(a)
-
-        a = ItemModel("5", covers[4], "L’attaque des titans", "En attente")
-        itemsList!!.add(a)
-
-        a = ItemModel("6", covers[5], "Fairy tails", "En cours")
-        itemsList!!.add(a)
-
-        a = ItemModel("7", covers[6], "Death Note", "En cours")
-        itemsList!!.add(a)
-
-        a = ItemModel("8", covers[7], "One punch man", "En cours")
-        itemsList!!.add(a)
+        itemViewModel.getItemsToFirebase(intent.getStringExtra(TITLE_CATEGORY),
+                FirebaseAuth.getInstance().currentUser!!.uid).observe(this, Observer { items ->
+            itemsList.addAll(items)
+            adapter.notifyDataSetChanged()
+        })
     }
 
     private fun configureViewModel() {
-        categoryViewModel = ViewModelProviders.of(this).get(CategoryViewModel::class.java)
+        itemViewModel = ViewModelProviders.of(this, ViewModelFactory(this)).get(ItemViewModel::class.java)
     }
 
 }

@@ -1,6 +1,9 @@
 package com.app.xeross.infoxer.model
 
-class ItemModel(var numberItem: String,
-                var imageItem: Int,
+class ItemModel(var imageItem: String,
                 var titleItem: String,
-                var stateItem: String)
+                var stateItem: String) {
+    constructor() : this("",
+            "",
+            "")
+}

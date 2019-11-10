@@ -8,7 +8,7 @@
     <string name="category_count">%d items</string>
 
 
-    <string name="title_categories">Music,Series,Movie,Anime/Manga,video Game,Food</string>
+    <string name="title_categories">Music,Series,Movie,Anime|Manga,video Game,Food</string>
 
     <!-- Strings related to Settings -->
 
@@ -90,4 +90,8 @@
     <string name="category_text">Category</string>
     <string name="login">Login</string>
     <string name="error_message">An error has occurred, please try again</string>
+    <string name="state_by_default_finished">State (Default: Finished)</string>
+    <string name="text_name">Name</string>
+    <string name="add">ADD</string>
+    <string name="cancel">CANCEL</string>
 </resources>

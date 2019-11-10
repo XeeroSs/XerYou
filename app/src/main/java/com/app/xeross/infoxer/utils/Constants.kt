@@ -7,6 +7,7 @@ const val IMAGE_CATEGORY = "IMAGE_CATEGORY"
 
 // AUTH
 const val RC_SIGN_IN = 555
+const val PICK_IMAGE_REQUEST = 89
 
 // COLLECTIONS
 const val USERS_COLLECTION = "users"

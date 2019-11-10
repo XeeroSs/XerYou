@@ -7,11 +7,10 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.app.xeross.infoxer.DatabaseRepository
 import com.app.xeross.infoxer.R
-import com.app.xeross.infoxer.UserModel
-import java.util.concurrent.Executor
+import com.app.xeross.infoxer.model.UserModel
 import java.util.concurrent.Executors
 
-class CategoryViewModel(var context: Context) : ViewModel() {
+class UserViewModel(var context: Context) : ViewModel() {
 
     private val databaseRepository = DatabaseRepository(context)
     private val executor = Executors.newSingleThreadExecutor()

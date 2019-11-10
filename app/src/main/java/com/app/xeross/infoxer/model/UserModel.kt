@@ -1,4 +1,4 @@
-package com.app.xeross.infoxer
+package com.app.xeross.infoxer.model
 
 data class UserModel(var userName: String,
                      var userId: String,

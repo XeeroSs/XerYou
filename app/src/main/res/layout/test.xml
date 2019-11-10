@@ -23,7 +23,7 @@
         android:layout_alignParentTop="true"
         android:layout_marginStart="15dp"
         android:layout_marginTop="15dp"
-        android:src="@drawable/jeu" />
+        android:src="@drawable/category_video_game" />
 
     <TextView
         android:id="@+id/image"

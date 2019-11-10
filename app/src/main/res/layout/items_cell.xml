@@ -42,7 +42,7 @@
             android:layout_marginEnd="8dp"
             android:layout_marginStart="20dp"
             android:layout_marginTop="8dp"
-            app:srcCompat="@drawable/jeu" />
+            app:srcCompat="@drawable/category_video_game" />
 
         <TextView
             android:id="@+id/itemsCell_TitleItems"

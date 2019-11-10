@@ -5,7 +5,6 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.DefaultItemAnimator
 import androidx.recyclerview.widget.GridLayoutManager
-import android.util.TypedValue
 import android.view.View
 import androidx.lifecycle.ViewModelProviders
 import com.app.xeross.infoxer.CategoriesAdapter
@@ -14,7 +13,7 @@ import com.app.xeross.infoxer.LoginActivity
 import com.app.xeross.infoxer.R
 import com.app.xeross.infoxer.model.CategoryModel
 import com.app.xeross.infoxer.utils.*
-import com.app.xeross.infoxer.viewmodel.CategoryViewModel
+import com.app.xeross.infoxer.viewmodel.UserViewModel
 import com.google.firebase.auth.FirebaseAuth
 import kotlinx.android.synthetic.main.content_main.*
 
@@ -26,7 +25,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var categoriesList: ArrayList<CategoryModel>
     private lateinit var imagesCategories: IntArray
     private lateinit var categoryTitleList: List<String>
-    private lateinit var categoryViewModel: CategoryViewModel
+    private lateinit var userViewModel: UserViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -70,7 +69,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun initializeCategories() {
-        imagesCategories = intArrayOf(R.drawable.music, R.drawable.serie, R.drawable.film, R.drawable.animerandom2, R.drawable.jeu, R.drawable.bouffe)
+        imagesCategories = intArrayOf(R.drawable.category_music, R.drawable.category_series, R.drawable.category_movie, R.drawable.category_anime, R.drawable.category_video_game, R.drawable.category_food)
         categoryTitleList = getString(R.string.title_categories).split(',')
         categoriesList = ArrayList()
         val categoriesTitleSize = categoryTitleList.size - 1
@@ -80,6 +79,6 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun configureViewModel() {
-        categoryViewModel = ViewModelProviders.of(this).get(CategoryViewModel::class.java)
+        userViewModel = ViewModelProviders.of(this).get(UserViewModel::class.java)
     }
 }

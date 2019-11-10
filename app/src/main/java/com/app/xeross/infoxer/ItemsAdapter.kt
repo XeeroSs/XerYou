@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.app.xeross.infoxer.model.ItemModel
+import com.app.xeross.infoxer.utils.Utils
 import com.bumptech.glide.Glide
 import kotlinx.android.synthetic.main.items_cell.view.*
 
@@ -21,7 +22,7 @@ class ItemsAdapter(val context: Context,
         holder.textViewTitleItems.text = itemsList[position].titleItem
         holder.textViewStateItems.text = itemsList[position].stateItem
         holder.textViewNumberItems.text = itemsList[position].numberItem
-        Glide.with(context).load(itemsList[position].imageItem).into(holder.imageViewImageItems)
+        Glide.with(context).load(Utils.decodeBitmap(itemsList[position].imageItem)).into(holder.imageViewImageItems)
     }
 
     class ItemsViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
